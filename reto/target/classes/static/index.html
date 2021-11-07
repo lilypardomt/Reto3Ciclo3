@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Reto 3</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/misFunciones.js"></script> -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="css/alertify.min.css" /> -->
+
+    <script src="js/agregarScript.js"></script>
+    <script src="js/listarScript.js"></script>
+    <script src="js/borrarScript.js"></script>
+    <script src="js/editarScript.js"></script>
+
+</head>
+
+<body>
+    <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+        <p class="text-center">Esta pagina solo realiza la Creacion y la visualizacion de los Clientes, Categorias,Auditorios,Mensajes,Reservas</p>
+    </div>
+    
+    <h1> CATEGORIA</h1>
+    <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+        
+        
+    
+    <div>
+        <input type="number" id="idCategoria" placeholder="id">
+        <input type="text" id="nameCategoria" placeholder="Nombre">
+        <input type="text" id="descriptionCategori" placeholder="Descripcion">
+        
+    </div>
+    <div style="padding:  10px 0 0 0;">
+    <button class="btn btn-primary"  onclick="agregarCategoria()" id="btnAgregarCategoria">Agregar</button>
+    <button class="btn btn-primary"  onclick="actualizarCategoria()" id="btnGuardarCategoria">GuardarEdicion</button>
+    <button class="btn btn-primary"  onclick="listarCategoria()" id="btnListarCategoria">Listar</button>
+       
+        <div id="listadoCategoria"></div>
+    
+    </div>
+    </div> 
+
+<h1> AUDITORIO</h1>
+<div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+    
+    
+
+<div>
+    <input type="number" id="idA" placeholder="id">
+    <input type="text" id="owner" placeholder="Owner">
+    <input type="number" id="capacity" placeholder="Capacity">
+    <input type="number" id="categori_Id" placeholder="Category_Id">
+    <input type="text" id="NameA" placeholder="Name">
+    
+</div>
+<div style="padding:  10px 0 0 0;">
+<button class="btn btn-primary"  onclick="agregar()" id="btnAgregar">Agregar</button>
+<button class="btn btn-primary"  onclick="actualizar()" id="btnGuardar">GuardarEdicion</button>
+<button class="btn btn-primary"  onclick="listarA()" id="btnListar">Listar</button>
+   
+    <div id="listado"></div>
+
+</div>
+</div>
+
+<h1> CLIENTE </h1>
+<div class="container mt-4 shadow-lg p-3 mb-5  rounded " >
+   
+<div>
+    <input type="number" id="idC" placeholder="id">
+    <input type="text" id="nameC" placeholder="name">
+    <input type="text" id="email" placeholder="email">
+    <input type="number" id="age" placeholder="age">
+    
+</div>
+<div style="padding:  10px 0 0 0;">
+    <button class="btn btn-primary"  onclick="agregarCliente()" id="btnAgregarC">Agregar</button>
+    <button class="btn btn-primary"  onclick="actualizarCliente()" id="btnGuardarC">GuardarEdicion</button>
+    <button class="btn btn-primary"  onclick="listarCliente()" id="btnListarC">Listar</button>
+       
+        <div id="listadoCliente"></div>
+    
+    </div>
+</div>
+
+<h1> MENSAJE </h1>
+<div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+    
+   
+<div>
+    <input type="number" id="idMe" placeholder="id">
+    <input type="text" id="mensajeM" placeholder="mensaje">
+    <input type="number" id="MesaggeIdcliente" placeholder="id Cliente">
+    <input type="number" id="MessageIdaudience" placeholder="id Auditorio">
+    
+    
+</div>
+<div style="padding:  10px 0 0 0;">
+    <button class="btn btn-primary"  onclick="agregarMensaje()" id="btnAgregarM">Agregar</button>
+    <button class="btn btn-primary"  onclick="actualizarMensaje()" id="btnGuardarM">GuardarEdicion</button>
+    <button class="btn btn-primary"  onclick="listarMensaje()" id="btnListarM">Listar</button>
+       
+        <div id="listadoMensaje"></div>
+    
+    </div>
+</div>
+<h1> Reservas</h1>
+<div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
+    
+    
+
+<div>
+    <input type="number" id="idReservas" placeholder="id">
+    <input type="number" id="idClientes" placeholder="Id Cliente">
+    <input type="number" id="idAuditorios" placeholder="Id Auditorios">
+    <input type="date" id="FechaIni" placeholder="Fecha Inicial">
+    <input type="date" id="FechaFin" placeholder="Fecha Final">
+    
+</div>
+<div style="padding:  10px 0 0 0;">
+<button class="btn btn-primary"  onclick="agregarReservas()" id="btnAgregarReservas">Agregar</button>
+<button class="btn btn-primary"  onclick="actualizarReservas()" id="btnGuardarReservas">GuardarEdicion</button>
+<button class="btn btn-primary"  onclick="listarReservas()" id="btnListarReservas">Listar</button>
+   
+    <div id="listadoReservas"></div>
+
+</div>
+</div>
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="js/alertify.min.js"></script> -->
+    <!-- <script src="js/carro.js"></script> --> -->
+</body>
+
+</html>
